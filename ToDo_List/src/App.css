@@ -76,14 +76,18 @@
   outline: none;
   outline: 2px solid rgb(0, 230, 122);
 }
-
+.btnWraper{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
 .primaryBtn{
   background-color: rgb(0, 230, 122);
   color: white;
   border: none;
   padding: 15px;
   margin-top: 30px;
-  width: 60px;
+  width: fit-content;
   cursor: pointer;
 }
 .primaryBtn:hover{
@@ -173,13 +177,26 @@
   margin: 5px;
   border-radius: 3px;
 }
-.edit_wrapper .primaryBtn{
+/* .edit_wrapper .primaryBtn{
   margin-left: auto;
   margin-right: auto;
   padding: 14px;
   font-size: 16px;
   width: fit-content;
+} */
+.cancelBtn{
+  background-color: rgb(230, 46, 0);
+  color: white;
+  border: none;
+  padding: 15px;
+  margin-top: 30px;
+  width: fit-content;
+  cursor: pointer;
 }
+.cancelBtn:hover{
+  background-color: rgb(182, 38, 2);
+}
+
 
 @media (max-width: 700px){
   .todo-input{

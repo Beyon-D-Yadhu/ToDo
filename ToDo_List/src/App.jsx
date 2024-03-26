@@ -16,6 +16,7 @@ function App() {
   const [completedTodos,setCompletedTodos] = useState([])
   const [currentEdit,setCurrentEdit] = useState("")
   const [currentEditedItem,setCurrentEditedItem] = useState("");
+
   const handleAddTodo = () =>{
     let newToDoItem = {
       title:newTitle,
@@ -125,6 +126,10 @@ function App() {
     setTodos(newToDo)
     setCurrentEdit('')
   }
+  function cancelUpdate(){
+    setCurrentEdit("")
+    setCurrentEditedItem("")
+  }
 
   return(
     <div className='main-body'>
@@ -160,9 +165,10 @@ function App() {
               <input type="text" placeholder='Updated Title' onChange={(e)=>handleUpdateTitle(e.target.value)} value={currentEditedItem.title} />
               <input type="text" placeholder='Updated Description' onChange={(e)=>handleUpdateDesc(e.target.value)} value={currentEditedItem.desc} />
               
-              {/* <button type='button' className='primaryBtn'>Cancel</button> */}
+              <div className='btnWraper'>
               <button type='button' onClick={handleUpdateToDo} className='primaryBtn'>Update</button>
-              
+              <button type='button' onClick={cancelUpdate} className='cancelBtn'>Cancel</button>
+              </div>
             </div>
             )
           }else{
